@@ -1,0 +1,8 @@
+<h1>Characters</h1>
+
+<% @characters.each do |character| %>
+  <li>
+    <%= link_to character.name, character %>
+    <%= imgfly_image_tag character.image_id, size: '50x50' %>
+  </li>
+<% end %>

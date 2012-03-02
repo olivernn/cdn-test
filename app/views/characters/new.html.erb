@@ -1,0 +1,14 @@
+<%= form_for @character do |f| -%>
+  <%= f.label :name, "Name" %>
+  <%= f.text_field :name %>
+
+  <%#= f.hidden_field :image_id, id: 'image-id', 'data-url' => Imgfly::Signiture.generate({ timestamp: Time.now.to_i * 1000, key: Imgfly.public_key }, '/image?')%>
+
+  <%= f.imgfly_upload_field :image_id %>
+
+  <%= f.submit "Save" %>
+<% end -%>
+
+<script type="text/javascript" charset="utf-8">
+  $('#character_image_id').uploader()
+</script>
